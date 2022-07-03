@@ -1,6 +1,53 @@
 <div mat-dialog-content>{{message}}</div>
 <div mat-dialog-actions>
-  <button mat-button (click)="clickNo()">NO</button>
-  <button mat-button [mat-dialog-close]="true">SI</button>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+    <div class="mb-3">
+      <label for="nombre">Nombre: </label><!--el for es el id creo-->
+      <br/>
+      <input id="nombre" type="text" formControlName="nombre">
+
+      <mat-form-field appearance="outline"><!--continuar aqui-->
+        <mat-label>Outline form field</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="mb-3">
+      <label for="ingredientes">Ingredientes: </label>
+      <br/>
+     <!--<input id="ingredientes" type="text" formControlName="ingredientes">-->
+      <textarea name="textarea"  formControlName="ingredientes"></textarea>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="mb-3">
+      <label for="precio">Precio: </label><!--mostrar si los clientes estan loggeados-->
+      <br/>
+      <input id="precio" type="number" formControlName="precio">
+    </div>
+
+    <div class="mb-3">
+      <label for="imagen">Imagen: </label>
+      <br/>
+      <input id="imagen" type="text" formControlName="imagen">
+    </div>
+
+    <div *ngIf="!profileForm.valid">Rellene todos los campos</div>
+    <br/>
+    <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+
+
+  </form>
+
+  <!--<button class="btn btn-primary" mat-button (click)="clickNo()">NO</button>
+  <button class="btn btn-primary" mat-button [mat-dialog-close]="true">SI</button>-->
 
 </div>

@@ -4,3 +4,15 @@ form{
 textarea{
   width: 100%;
 }
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.buttonadd{
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+}

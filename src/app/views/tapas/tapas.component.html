@@ -1,42 +1,16 @@
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
-  <div class="mb-3">
-    <label for="nombre">Nombre: </label><!--el for es el id creo-->
-    <br/>
-    <input id="nombre" type="text" formControlName="nombre">
-  </div>
 
-  <div class="mb-3">
-    <label for="ingredientes">Ingredientes: </label>
-    <br/>
-   <!--<input id="ingredientes" type="text" formControlName="ingredientes">-->
-    <textarea name="textarea"  formControlName="ingredientes"></textarea>
-  </div>
-
-  <div class="mb-3">
-    <label for="precio">Precio: </label><!--mostrar si los clientes estan loggeados-->
-    <br/>
-    <input id="precio" type="number" formControlName="precio">
-  </div>
-
-  <div class="mb-3">
-    <label for="imagen">Imagen: </label>
-    <br/>
-    <input id="imagen" type="text" formControlName="imagen">
-  </div>
-
-  <div *ngIf="!profileForm.valid">Rellene todos los campos</div>
-  <br/>
-  <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
-
-
-
-</form>
 
 
 <app-listatapas></app-listatapas>
 
 
-<button mat-button (click)="openDialog()">OpenDialog</button>
 
+
+
+<button class="buttonadd" mat-fab color="warn" aria-label="OpenDialog" (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<!--hacer al principio de esta pagina un mural con las fotos de todas las tapas, y si pulsa sobre una de ellas se va hacia ella en al lista-->
 
 <!--hacer un buscador por el nombre de la tapa-->

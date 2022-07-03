@@ -12,8 +12,16 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListatapasComponent } from './views/tapas/listatapas/listatapas.component';
+
+//material, esto deberia haber ido en otro modulo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupComponent } from './popup/popup.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +34,19 @@ import { PopupComponent } from './popup/popup.component';
   imports: [
     BrowserAnimationsModule,
     MatDialogModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+
 
 
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,//formularios reactivos
     provideFirebaseApp(() => initializeApp(environment.firebase)),///firebase
-    provideFirestore(() => getFirestore()), BrowserAnimationsModule,
+    provideFirestore(() => getFirestore())
   ],
   providers: [DataServicesService],
   bootstrap: [AppComponent]
