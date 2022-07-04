@@ -1,8 +1,9 @@
 import { Observable } from './../../../../node_modules/@firebase/util/dist/node-esm/src/subscribe.d';
 import { Injectable } from '@angular/core';
-import { collectionData, deleteDoc, doc, Firestore } from '@angular/fire/firestore';
+import { collectionData, deleteDoc, doc, Firestore, setDoc, updateDoc } from '@angular/fire/firestore';
 import { addDoc, collection } from '@firebase/firestore';
 import { Tapa } from '../interfaces/tapa.interface';
+import { tap } from 'rxjs';
 
 
 @Injectable({
@@ -28,14 +29,18 @@ export class DataServicesService {
     return deleteDoc(dbref);
   }
 
-  /*updateTapa(tapa:Tapa) {
-    this.studentRef.update({
-      firstName: student.firstName,
-      lastName: student.lastName,
-      email: student.email,
-      mobileNumber: student.mobileNumber,
+  updateTapa(tapa:Tapa) {
+    const dbref = doc(this.firestore,`tapas/${tapa.id}`);
+    return updateDoc(dbref, {
+
+      nombre:tapa.nombre,
+      ingredientes:tapa.ingredientes,
+      precio:tapa.precio,
+      imagen:tapa.imagen,
     });
-  }*/
+
+
+  }
 
 
 

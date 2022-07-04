@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupComponent } from 'src/app/popup/popup.component';
+import { PopupComponent } from 'src/app/popup-add/popup.component';
 
 @Component({
   selector: 'app-tapas',
@@ -27,8 +27,9 @@ export class TapasComponent implements OnInit {
   ///material
   openDialog():void{
     const dialogRef=this.dialog.open(PopupComponent,{
-      width:'90%',
-      data:'bmvhgv'
+      width:'40%',
+
+
 
     });
     dialogRef.afterClosed().subscribe(res=>{

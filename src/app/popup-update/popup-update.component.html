@@ -1,0 +1,63 @@
+<br/>
+<div class="titulo" mat-dialog-content>Introduce los datos de la tapa</div>
+<br/>
+<div mat-dialog-actions  >
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form" >
+    <div class="mb-3">
+      <!--<label for="nombre">Nombre: </label><!--el for es el id creo
+      <br/>
+      <input id="nombre" type="text" formControlName="nombre">-->
+
+      <mat-form-field appearance="outline" class="cuadrodatos"><!--continuar aqui-->
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text"  formControlName="nombre">
+       <!-- <mat-hint>Introduzca nombre de la tapa</mat-hint>-->
+      </mat-form-field>
+    </div>
+
+    <div class="mb-3">
+      <!--<label for="ingredientes">Ingredientes: </label>
+      <br/>
+     <!--<input id="ingredientes" type="text" formControlName="ingredientes">
+      <textarea name="textarea"  formControlName="ingredientes"></textarea>-->
+
+      <mat-form-field  appearance="outline" class="cuadrodatos">
+        <mat-label>Ingredientes</mat-label>
+        <textarea matInput formControlName="ingredientes" ></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="mb-3">
+      <!--<label for="precio">Precio: </label><!--mostrar si los clientes estan loggeados
+      <br/>
+      <input id="precio" type="number" formControlName="precio">-->
+
+      <mat-form-field appearance="outline" class="cuadrodatos"><!--continuar aqui-->
+        <mat-label>Precio</mat-label>
+        <input matInput type="text"  formControlName="precio">
+       <!-- <mat-hint>Introduzca nombre de la tapa</mat-hint>-->
+      </mat-form-field>
+    </div>
+
+    <div class="mb-3">
+      <mat-form-field appearance="outline" class="cuadrodatos"><!--continuar aqui-->
+        <mat-label>Imagen</mat-label>
+        <input matInput type="text"  formControlName="imagen">
+      </mat-form-field>
+    </div>
+
+
+
+    <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Guardar</button>
+    <br/>
+
+
+
+  </form>
+
+  <!--<button class="btn btn-primary" mat-button (click)="clickNo()">NO</button>
+  <button class="btn btn-primary" mat-button [mat-dialog-close]="true">SI</button>-->
+
+</div>
+

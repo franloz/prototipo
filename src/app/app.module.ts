@@ -15,12 +15,16 @@ import { ListatapasComponent } from './views/tapas/listatapas/listatapas.compone
 
 //material, esto deberia haber ido en otro modulo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PopupComponent } from './popup/popup.component';
+import { PopupComponent } from './popup-add/popup.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { PopupDeleteComponent } from './popup-delete/popup-delete.component';
+import { PopupUpdateComponent } from './popup-update/popup-update.component';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -30,6 +34,8 @@ import {MatInputModule} from '@angular/material/input';
     TapasComponent,
     ListatapasComponent,
     PopupComponent,
+    PopupDeleteComponent,
+    PopupUpdateComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -46,7 +52,9 @@ import {MatInputModule} from '@angular/material/input';
     AppRoutingModule,
     ReactiveFormsModule,//formularios reactivos
     provideFirebaseApp(() => initializeApp(environment.firebase)),///firebase
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage())
   ],
   providers: [DataServicesService],
   bootstrap: [AppComponent]
