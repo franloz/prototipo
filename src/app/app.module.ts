@@ -25,6 +25,7 @@ import { PopupDeleteComponent } from './popup-delete/popup-delete.component';
 import { PopupUpdateComponent } from './popup-update/popup-update.component';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     PopupComponent,
     PopupDeleteComponent,
     PopupUpdateComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserAnimationsModule,

@@ -4,4 +4,5 @@ export  interface Tapa{
     precio:number;
     imagen:string;
     id?:string,
+    idImagen:string
 }

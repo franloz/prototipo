@@ -42,9 +42,11 @@
 
     <div class="mb-3">
 
-        <input  type="file"  formControlName="imagen">
+        <input  type="file"  formControlName="imagen" (change)="selectImage($event)">
 
     </div>
+
+    <app-loading *ngIf="loading"></app-loading>
 
 
 
