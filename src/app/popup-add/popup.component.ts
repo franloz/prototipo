@@ -61,7 +61,6 @@ export class PopupComponent implements OnInit {
     ///se sube la imagen
     this.loading=true;
 
-    //let todayString =this.datepipe.transform(this.today, 'M/d/yy, h:mm:ss');//paso la fecha a string porque sino no lo pone bien en la base de datos
 
     this.todaystring=formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530');
 

@@ -4,7 +4,7 @@
 <div mat-dialog-actions  >
 
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form" >
-    <div class="mb-3">
+    <div >
       <!--<label for="nombre">Nombre: </label><!--el for es el id creo
       <br/>
       <input id="nombre" type="text" formControlName="nombre">-->
@@ -16,7 +16,7 @@
       </mat-form-field>
     </div>
 
-    <div class="mb-3">
+    <div >
       <!--<label for="ingredientes">Ingredientes: </label>
       <br/>
      <!--<input id="ingredientes" type="text" formControlName="ingredientes">
@@ -28,7 +28,7 @@
       </mat-form-field>
     </div>
 
-    <div class="mb-3">
+    <div >
       <!--<label for="precio">Precio: </label><!--mostrar si los clientes estan loggeados
       <br/>
       <input id="precio" type="number" formControlName="precio">-->
@@ -40,19 +40,19 @@
       </mat-form-field>
     </div>
 
-    <div class="mb-3">
+    <div >
 
-        <input  type="file"  formControlName="imagen" (change)="selectImage($event)">
+        <input class="file"  type="file"  formControlName="imagen" (change)="selectImage($event)">
 
     </div>
+    <br/>
 
     <app-loading *ngIf="loading"></app-loading>
 
 
+    <br/>
 
-
-
-    <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Guardar</button>
+    <button mat-button class="button" type="submit" [disabled]="!profileForm.valid">Guardar</button>
     <br/>
 
 

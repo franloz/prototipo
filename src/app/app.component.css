@@ -1,5 +1,5 @@
 
-/*para centrar en menu*/
+/*para centrar en menu
 .navbar-nav.navbar-center {
   position: sticky;
   left: 50%;
@@ -16,7 +16,7 @@ a{
 
 }
 
-/*para la animacion*/
+/*para la animacion
 .navbar ul {
   display: flex;
   padding: 0;
@@ -48,6 +48,39 @@ ul li:hover::before {
   bottom: 56px;
   left: 0;
   background-color: rgb(0, 179, 255);
+}*/
+
+
+#menu{
+  position: fixed;
+  z-index: 1;
 }
 
+mat-drawer{
+  width: 15em;
+  text-align: center;
+  position: fixed;
+}
+
+mat-toolbar{
+  align-items: center;
+}
+
+.pantallas{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.button-menu{
+  font-size: large;
+}
+
+#button-drawer{
+  padding-left: 2%;
+
+}
+
+#restaurante{
+  padding-left: 2%;
+}
 

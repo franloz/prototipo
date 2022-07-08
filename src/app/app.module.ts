@@ -1,4 +1,4 @@
-import { MatDialogModule } from '@angular/material/dialog';
+
 import { DataServicesService } from './shared/services/data-services.service';
 import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
@@ -14,18 +14,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListatapasComponent } from './views/tapas/listatapas/listatapas.component';
 
 //material, esto deberia haber ido en otro modulo
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupComponent } from './popup-add/popup.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupDeleteComponent } from './popup-delete/popup-delete.component';
 import { PopupUpdateComponent } from './popup-update/popup-update.component';
+
+
+
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { LoadingComponent } from './loading/loading.component';
+import { MaterialModule } from './material/material.module';
+
+
 
 
 @NgModule({
@@ -40,13 +41,8 @@ import { LoadingComponent } from './loading/loading.component';
     LoadingComponent,
   ],
   imports: [
-    BrowserAnimationsModule,
-    MatDialogModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
+    MaterialModule,
+
 
 
 

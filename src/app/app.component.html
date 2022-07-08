@@ -1,25 +1,48 @@
-<nav class="navbar navbar-expand-sm  sticky-top " id="menu">
+<mat-drawer-container hasBackdrop="true" >
+  <mat-drawer mode="over" #drawer >
+    <br />
+    <br />
+    <h2>Restaurante</h2>
+    <br />
+    <button class="mat-drawer-button"  (click)="drawer.close()" mat-button [routerLink]="['/']">Inicio</button>
 
-  <!-- Links -->
-  <ul class="navbar-nav navbar-center ">
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['']">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/tapas']">Tapas</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/quienes']">Quienes somos</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/contacto']">Contacto</a>
-    </li>
-  </ul>
+    <br />
+    <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/tapas']">Tapas</button>
+    <br />
+    <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/contacto']">Basic</button>
+    <br />
+    <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/contacto']">Basic</button>
 
-</nav>
+  </mat-drawer>
 
 
-<router-outlet></router-outlet>
+  <mat-toolbar color="primary" id="menu">
+    <!--esto es el menu de arriba-->
+    <button id="button-drawer" (click)="drawer.toggle()" mat-icon-button *ngIf="hideMenuV">
+      <mat-icon>menu</mat-icon>
+
+    </button>
+
+    <span id="restaurante">Restaurante</span>
+    <div class="pantallas" *ngIf="hideMenuH">
+      <button class="button-menu" (click)="drawer.close()" mat-button [routerLink]="['/']" mat-button>
+        Inicio
+      </button>
+      <button class="button-menu" (click)="drawer.close()" mat-button [routerLink]="['tapas']" mat-button>
+        Tapas
+      </button>
+    </div>
+
+  </mat-toolbar>
+
+
+  <br />
+  <br />
+  <br />
+  <br />
 
 
 
+  <router-outlet></router-outlet>
+
+</mat-drawer-container>

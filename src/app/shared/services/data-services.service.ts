@@ -29,7 +29,18 @@ export class DataServicesService {
     return deleteDoc(dbref);
   }
 
-  updateTapa(tapa:Tapa) {
+  updateTapa1(tapa:Tapa) {
+    const dbref = doc(this.firestore,`tapas/${tapa.id}`);
+    return updateDoc(dbref, {
+
+      nombre:tapa.nombre,
+      ingredientes:tapa.ingredientes,
+      precio:tapa.precio,
+    });
+
+
+  }
+  updateTapa2(tapa:Tapa) {
     const dbref = doc(this.firestore,`tapas/${tapa.id}`);
     return updateDoc(dbref, {
 
@@ -37,6 +48,7 @@ export class DataServicesService {
       ingredientes:tapa.ingredientes,
       precio:tapa.precio,
       imagen:tapa.imagen,
+      idImagen:tapa.idImagen
     });
 
 
