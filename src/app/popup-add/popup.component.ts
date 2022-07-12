@@ -2,7 +2,7 @@ import { Tapa } from 'src/app/shared/interfaces/tapa.interface';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DataServicesService } from '../shared/services/data-services.service';
+import { DataServicesService } from '../shared/services/tapa-services.service';
 import { getDownloadURL, ref, Storage } from '@angular/fire/storage';
 import { uploadBytes } from '@firebase/storage';
 import { formatDate } from '@angular/common';

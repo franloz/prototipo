@@ -1,17 +1,16 @@
 
-import { DataServicesService } from './shared/services/data-services.service';
+import { DataServicesService } from './shared/services/tapa-services.service';
 import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TapasComponent } from './views/tapas/tapas.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ListatapasComponent } from './views/tapas/listatapas/listatapas.component';
+import { ListatapasComponent } from './views/carta/listatapas/listatapas.component';
 
 //material, esto deberia haber ido en otro modulo
 import { PopupComponent } from './popup-add/popup.component';
@@ -25,6 +24,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { LoadingComponent } from './loading/loading.component';
 import { MaterialModule } from './material/material.module';
+import { CartaComponent } from './views/carta/carta.component';
+import { ListaracionesComponent } from './views/carta/listaraciones/listaraciones.component';
 
 
 
@@ -33,12 +34,13 @@ import { MaterialModule } from './material/material.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    TapasComponent,
     ListatapasComponent,
     PopupComponent,
     PopupDeleteComponent,
     PopupUpdateComponent,
     LoadingComponent,
+    CartaComponent,
+    ListaracionesComponent,
   ],
   imports: [
     MaterialModule,

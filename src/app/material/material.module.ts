@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatExpansionModule,
+    MatDividerModule
   ],
   exports:[
     CommonModule,
@@ -37,7 +41,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatExpansionModule,
+    MatDividerModule
 
 
   ]

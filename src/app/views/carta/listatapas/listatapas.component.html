@@ -1,0 +1,130 @@
+<!--<div *ngFor="let tapa of tapas">
+  <p >id:{{tapa.id}} nombre:{{tapa.nombre}}   ingredientes:{{tapa.ingredientes}}   precio:{{tapa.precio}}   imagen:{{tapa.imagen}}</p>
+  <button class="btn btn-primary" (click)="deleteTapa(tapa)">Borrar</button>
+</div>-->
+
+
+<div *ngFor="let tapa of tapas" id="expansionpanel">
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ tapa.nombre }}
+        </mat-panel-title>
+        <!--<div id="descripcion">
+          {{tapa.precio}}€
+        </div>-->
+      </mat-expansion-panel-header>
+
+
+      <div [id]="listaMovil ? null: 'divimagen'">
+        <img src={{tapa.imagen}} id="imagen">
+
+      </div>
+      <br/>
+      <div [id]="listaMovil ? null: 'divingredientes'">
+        <b id="ingredientes"> Ingredientes:</b>
+        <br/>
+        <br/>
+
+          <p [id]="listaMovil ? null : 'divtapaingredientes'"> {{tapa.ingredientes}}</p>
+      </div>
+
+      <!--<div >
+        <img src={{tapa.imagen}} id="imagen">
+
+      </div>
+      <br/>
+      <div>
+        <b id="ingredientes"> Ingredientes:</b>
+      </div>
+      <div >
+
+        <p> {{tapa.ingredientes}}</p>
+
+      </div>-->
+
+
+
+      <mat-action-row>
+        <button mat-button (click)="deleteTapa(tapa)">Borrar <mat-icon>delete</mat-icon></button>
+        <button mat-button (click)="updateTapa(tapa)">Modificar <mat-icon>edit</mat-icon></button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  <br />
+</div>
+
+
+<!--<div *ngIf="listaOrdena">
+  <div *ngFor="let tapa of tapas" id="expansionpanel">
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ tapa.nombre }}
+          </mat-panel-title>
+          <div id="descripcion">
+            {{tapa.precio}}€
+          </div>
+        </mat-expansion-panel-header>
+
+
+          <div id="divimagen">
+            <img src={{tapa.imagen}} id="imagen">
+
+          </div>
+          <br/>
+          <div id="divingredientes">
+            <b id="ingredientes"> Ingredientes:</b>
+            <br/>
+            <br/>
+
+              <p id="divtapaingredientes"> {{tapa.ingredientes}}</p>
+          </div>
+
+        <mat-action-row>
+          <button mat-button (click)="deleteTapa(tapa)">Borrar <mat-icon>delete</mat-icon></button>
+          <button mat-button (click)="updateTapa(tapa)">Modificar <mat-icon>edit</mat-icon></button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    <br />
+  </div>
+  </div>-->
+
+
+
+
+
+
+<!--<div *ngIf="listaOrdena">
+<div *ngFor="let tapa of tapas" >
+  <mat-card class="card" >
+
+    <mat-card-title-group>
+      <mat-card-title>{{tapa.nombre}}</mat-card-title>
+      <mat-card-subtitle>{{tapa.precio}}</mat-card-subtitle>
+      <img id="imagencomida" mat-card-xl-image src={{tapa.imagen}} alt="Photo of a Shiba Inu">
+    </mat-card-title-group>
+
+
+
+    <mat-card-content>
+      <p>
+        {{tapa.ingredientes}}
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button (click)="deleteTapa(tapa)">Borrar <mat-icon>delete</mat-icon></button>
+      <button mat-button (click)="updateTapa(tapa)">Modificar <mat-icon>edit</mat-icon></button>
+    </mat-card-actions>
+
+  </mat-card>
+  <br/>
+</div>
+</div>-->
+
+
+
+
+<!--añadir animaciones al desplegar lista q aparezca por la izq por ejemplo-->

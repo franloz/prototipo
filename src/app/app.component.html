@@ -7,7 +7,7 @@
     <button class="mat-drawer-button"  (click)="drawer.close()" mat-button [routerLink]="['/']">Inicio</button>
 
     <br />
-    <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/tapas']">Tapas</button>
+    <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/carta']">Tapas</button>
     <br />
     <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/contacto']">Basic</button>
     <br />
@@ -18,18 +18,18 @@
 
   <mat-toolbar color="primary" id="menu">
     <!--esto es el menu de arriba-->
-    <button id="button-drawer" (click)="drawer.toggle()" mat-icon-button *ngIf="hideMenuV">
+    <button mat-icon-button aria-label="menu"  #buttondrawer  id="button-drawer"(click)="drawer.toggle()"  *ngIf="hideMenuV">
       <mat-icon>menu</mat-icon>
 
     </button>
 
     <span id="restaurante">Restaurante</span>
     <div class="pantallas" *ngIf="hideMenuH">
-      <button class="button-menu" (click)="drawer.close()" mat-button [routerLink]="['/']" mat-button>
+      <button class="button-menu"  mat-button [routerLink]="['/']" >
         Inicio
       </button>
-      <button class="button-menu" (click)="drawer.close()" mat-button [routerLink]="['tapas']" mat-button>
-        Tapas
+      <button class="button-menu"  mat-button [routerLink]="['/carta']" >
+        Carta
       </button>
     </div>
 
@@ -44,5 +44,10 @@
 
 
   <router-outlet></router-outlet>
+  <!--<footer>redes sociales, direccion, maps</footer>-->
 
 </mat-drawer-container>
+
+
+
+

@@ -1,0 +1,49 @@
+<div *ngFor="let tapa of tapas" id="expansionpanel">
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ tapa.nombre }}
+      </mat-panel-title>
+      <!--<div id="descripcion">
+        {{tapa.precio}}€
+      </div>-->
+    </mat-expansion-panel-header>
+
+
+    <div [id]="listaMovil ? null: 'divimagen'">
+      <img src={{tapa.imagen}} id="imagen">
+
+    </div>
+    <br/>
+    <div [id]="listaMovil ? null: 'divingredientes'">
+      <b id="ingredientes"> Ingredientes:</b>
+      <br/>
+      <br/>
+
+        <p [id]="listaMovil ? null : 'divtapaingredientes'"> {{tapa.ingredientes}}</p>
+    </div>
+
+    <!--<div >
+      <img src={{tapa.imagen}} id="imagen">
+
+    </div>
+    <br/>
+    <div>
+      <b id="ingredientes"> Ingredientes:</b>
+    </div>
+    <div >
+
+      <p> {{tapa.ingredientes}}</p>
+
+    </div>-->
+
+
+
+    <mat-action-row>
+      <button mat-button (click)="deleteTapa(tapa)">Borrar <mat-icon>delete</mat-icon></button>
+      <button mat-button (click)="updateTapa(tapa)">Modificar <mat-icon>edit</mat-icon></button>
+    </mat-action-row>
+  </mat-expansion-panel>
+<br />
+</div>

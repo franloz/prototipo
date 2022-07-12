@@ -1,0 +1,61 @@
+.card{
+  margin-left:auto;
+  margin-right:auto;
+  width: 80%;
+}
+
+#expansionpanel{
+  margin-left:auto;
+  margin-right:auto;
+  width: 76%;
+
+
+}
+
+
+
+
+
+#imagen{
+  height:100% ;
+  width: 100%;
+
+}
+
+
+/*#descripcion{
+  text-align: end;
+
+  padding-right: 2em;
+}*/
+
+
+#divingredientes{
+  width: 50%;
+  float:right;
+  text-align: center;
+
+
+}
+
+#divimagen{
+
+  width: 50%;
+  float:left;
+}
+
+#divtapaingredientes{
+
+
+  padding-left: 2%;
+  padding-right: 2%;
+
+
+
+}
+
+#ingredientes{
+  font-size: large;
+}
+
+

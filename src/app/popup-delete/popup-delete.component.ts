@@ -1,7 +1,7 @@
 import { Tapa } from 'src/app/shared/interfaces/tapa.interface';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DataServicesService } from '../shared/services/data-services.service';
+import { DataServicesService } from '../shared/services/tapa-services.service';
 import {  deleteObject, ref, Storage } from '@angular/fire/storage';
 
 @Component({

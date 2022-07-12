@@ -1,9 +1,8 @@
-import { Observable } from './../../../../node_modules/@firebase/util/dist/node-esm/src/subscribe.d';
+import { Observable } from '@firebase/util/dist/node-esm/src/subscribe';
 import { Injectable } from '@angular/core';
 import { collectionData, deleteDoc, doc, Firestore, setDoc, updateDoc } from '@angular/fire/firestore';
 import { addDoc, collection } from '@firebase/firestore';
 import { Tapa } from '../interfaces/tapa.interface';
-import { tap } from 'rxjs';
 
 
 @Injectable({

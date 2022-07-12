@@ -16,3 +16,14 @@ textarea{
   bottom: 3%;
   right: 2%;
 }
+
+h1{
+  text-align: center;
+}
+
+mat-divider{
+  margin-left:auto;
+  margin-right:auto;
+  width: 76%;
+}
+

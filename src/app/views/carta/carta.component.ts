@@ -3,11 +3,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from 'src/app/popup-add/popup.component';
 
 @Component({
-  selector: 'app-tapas',
-  templateUrl: './tapas.component.html',
-  styleUrls: ['./tapas.component.css']
+  selector: 'app-carta',
+  templateUrl: './carta.component.html',
+  styleUrls: ['./carta.component.css']
 })
-export class TapasComponent implements OnInit {
+export class CartaComponent implements OnInit {
+
 
 
 
@@ -27,7 +28,7 @@ export class TapasComponent implements OnInit {
   ///material
   openDialog():void{
     const dialogRef=this.dialog.open(PopupComponent,{
-      width:'40%',
+      width:'55em',
 
 
 
@@ -36,8 +37,6 @@ export class TapasComponent implements OnInit {
       console.log(res);
     });
   }
-
-
 
 
 

@@ -4,7 +4,7 @@ import { ref, uploadBytes, Storage, getDownloadURL, deleteObject, } from '@angul
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Tapa } from '../shared/interfaces/tapa.interface';
-import { DataServicesService } from '../shared/services/data-services.service';
+import { DataServicesService } from '../shared/services/tapa-services.service';
 
 @Component({
   selector: 'app-popup-update',
