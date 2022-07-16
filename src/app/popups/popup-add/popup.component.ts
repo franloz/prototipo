@@ -1,8 +1,8 @@
-import { Tapa } from 'src/app/shared/interfaces/tapa.interface';
+import { Comida } from 'src/app/shared/interfaces/comida.interface';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DataServicesService } from '../shared/services/tapa-services.service';
+import { DataServicesService } from '../../shared/services/data-services.service';
 import { getDownloadURL, ref, Storage } from '@angular/fire/storage';
 import { uploadBytes } from '@firebase/storage';
 import { formatDate } from '@angular/common';
@@ -26,6 +26,10 @@ export class PopupComponent implements OnInit {
 
   loading:boolean=false;//señal de carga para cuando se inserta una tapa
 
+  eleccion?: string;//eleccion para añadir tapa, racion o postre
+
+  inputdisable:boolean=false;
+
 
 
 
@@ -33,7 +37,7 @@ export class PopupComponent implements OnInit {
 
   constructor(
     private dataService: DataServicesService,
-    public dialogRef: MatDialogRef<PopupComponent>, @Inject(MAT_DIALOG_DATA) public tapa: Tapa,
+    public dialogRef: MatDialogRef<PopupComponent>, @Inject(MAT_DIALOG_DATA) public tapa: Comida,
     private storage: Storage,
    // public datepipe: DatePipe
   ) {
@@ -45,6 +49,10 @@ export class PopupComponent implements OnInit {
       imagen: new FormControl('', Validators.required),
       idImagen: new FormControl(''),//este lo pongo para guardar el nombre de la foto para borrarla luego
     });
+
+    if(this.eleccion==null){
+
+    }
   }
   //formulario
   async onSubmit() {
@@ -78,25 +86,29 @@ export class PopupComponent implements OnInit {
         this.profileForm.value.imagen = imageUrl;//meto la url obtenida en el campo imagen del formulario
         this.profileForm.value.idImagen = this.todaystring;//meto el nombre de la imagen para borrarla luego
 
-        await this.dataService.addTapa(this.profileForm.value);
+        //según la comida elegida se inserta en una tabla u otra
+        if(this.eleccion=='Tapa'){
+          await this.dataService.addComida(this.profileForm.value,'tapas');
+        }
+        if(this.eleccion=='Racion'){
+          await this.dataService.addComida(this.profileForm.value,'raciones');
+        }
+        if(this.eleccion=='Postre'){
+          await this.dataService.addComida(this.profileForm.value,'postres');
+        }
+
 
 
       })
       .catch(error => console.log(error))/////////////////////////////////////////////////////dialog con error
 
-
-
-
-
-
-
-
-
-
-
+  }
+  onValChange(value){
+    this.profileForm.enable();//habilito los input cuando se eleige una comida
   }
 
   ngOnInit(): void {
+    this.profileForm.disable();//deshabilito los inputs al principio porque no se ha elegido una comida
   }
 
 

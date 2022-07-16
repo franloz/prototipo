@@ -1,10 +1,10 @@
-import { RacionServicesService } from './../../../shared/services/racion-services.service';
+import { DataServicesService } from './../../../shared/services/data-services.service';
+import { Comida } from 'src/app/shared/interfaces/comida.interface';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupDeleteComponent } from 'src/app/popup-delete/popup-delete.component';
-import { PopupUpdateComponent } from 'src/app/popup-update/popup-update.component';
-import { Racion } from 'src/app/shared/interfaces/racion.interface';
+import { PopupDeleteComponent } from 'src/app/popups/popup-delete/popup-delete.component';
+import { PopupUpdateComponent } from 'src/app/popups/popup-update/popup-update.component';
 
 @Component({
   selector: 'app-listaraciones',
@@ -17,12 +17,12 @@ export class ListaracionesComponent implements OnInit {
   //listaOrdena:boolean=false;
 
   //array de tapas para llenarlo con la suscripcion
-  tapas: Racion[] = [];
+  tapas: Comida[] = [];
 
-  constructor(private dataservice:RacionServicesService,public dialog:MatDialog,private breakpointService: BreakpointObserver) { }
+  constructor(private dataservice:DataServicesService,public dialog:MatDialog,private breakpointService: BreakpointObserver) { }
 
   ngOnInit(): void {
-    this.dataservice.getRacion().subscribe(tapas=>{
+    this.dataservice.getComidas('raciones').subscribe(tapas=>{
       this.tapas=tapas;
     })
 
@@ -45,10 +45,14 @@ export class ListaracionesComponent implements OnInit {
 
   }
 
-  deleteTapa(racion:Racion){
+  deleteComida(comida:Comida){
     const dialogRef=this.dialog.open(PopupDeleteComponent,{
       width:'20em',
-      data:racion
+      data:{
+        comida:comida,
+        tipo:'raciones'
+      }
+
 
 
 
@@ -60,10 +64,14 @@ export class ListaracionesComponent implements OnInit {
     //await this.dataservice.deleteTapa(tapa);
   }
 
-  updateTapa(racion:Racion){
+  updateComida(comida:Comida){
     const dialogRef=this.dialog.open(PopupUpdateComponent,{
       width:'55em',
-      data:racion,
+      data:{
+        comida:comida,
+        tipo:'raciones'
+      }
+
 
 
     });

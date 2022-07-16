@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupComponent } from 'src/app/popup-add/popup.component';
+import { PopupComponent } from 'src/app/popups/popup-add/popup.component';
 
 @Component({
   selector: 'app-carta',

@@ -1,4 +1,4 @@
-export  interface Tapa{
+export  interface Comida{
     nombre:string;
     ingredientes:string;
     precio:number;

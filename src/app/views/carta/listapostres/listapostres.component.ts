@@ -1,19 +1,17 @@
-import { PopupUpdateComponent } from '../../../popups/popup-update/popup-update.component';
-import { PopupDeleteComponent } from '../../../popups/popup-delete/popup-delete.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupComponent } from 'src/app/popups/popup-add/popup.component';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { PopupDeleteComponent } from 'src/app/popups/popup-delete/popup-delete.component';
+import { PopupUpdateComponent } from 'src/app/popups/popup-update/popup-update.component';
 import { Comida } from 'src/app/shared/interfaces/comida.interface';
 import { DataServicesService } from 'src/app/shared/services/data-services.service';
 
 @Component({
-  selector: 'app-listatapas',
-  templateUrl: './listatapas.component.html',
-  styleUrls: ['./listatapas.component.css']
+  selector: 'app-listapostres',
+  templateUrl: './listapostres.component.html',
+  styleUrls: ['./listapostres.component.css']
 })
-export class ListatapasComponent implements OnInit {
-
+export class ListapostresComponent implements OnInit {
   listaMovil:boolean=false;
   //listaOrdena:boolean=false;
 
@@ -23,7 +21,7 @@ export class ListatapasComponent implements OnInit {
   constructor(private dataservice:DataServicesService,public dialog:MatDialog,private breakpointService: BreakpointObserver) { }
 
   ngOnInit(): void {
-    this.dataservice.getComidas('tapas').subscribe(tapas=>{
+    this.dataservice.getComidas('postres').subscribe(tapas=>{
       this.tapas=tapas;
     })
 
@@ -51,8 +49,9 @@ export class ListatapasComponent implements OnInit {
       width:'20em',
       data:{
         comida:comida,
-        tipo:'tapas'
+        tipo:'postres'
       }
+
 
 
 
@@ -69,8 +68,9 @@ export class ListatapasComponent implements OnInit {
       width:'55em',
       data:{
         comida:comida,
-        tipo:'tapas'
+        tipo:'postres'
       }
+
 
 
     });
@@ -79,8 +79,5 @@ export class ListatapasComponent implements OnInit {
     });
 
   }
-
-
-
 
 }

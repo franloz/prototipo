@@ -1,7 +1,7 @@
-import { Tapa } from 'src/app/shared/interfaces/tapa.interface';
+import { Comida } from 'src/app/shared/interfaces/comida.interface';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DataServicesService } from '../shared/services/tapa-services.service';
+import { DataServicesService } from '../../shared/services/data-services.service';
 import {  deleteObject, ref, Storage } from '@angular/fire/storage';
 
 @Component({
@@ -13,18 +13,18 @@ export class PopupDeleteComponent implements OnInit {
 
   constructor(private dataservice:DataServicesService,
     public dialogRef:MatDialogRef<PopupDeleteComponent>,
-    @Inject(MAT_DIALOG_DATA) public tapa:Tapa,
+    @Inject(MAT_DIALOG_DATA) public data:{comida:Comida,tipo:string} ,
     private storage: Storage) { }
 
   ngOnInit(): void {
   }
 
-  async deleteTapa(){
+  async deleteComida(){
     this.dialogRef.close();//cerrar dialog
 
-    const imgRef = ref(this.storage, `images/${this.tapa.idImagen}`);
+    const imgRef = ref(this.storage, `images/${this.data.comida.idImagen}`);
 
-    await this.dataservice.deleteTapa(this.tapa);
+    await this.dataservice.deleteComida(this.data.comida,this.data.tipo);
 
     deleteObject(imgRef).then(() => {
       // File deleted successfully

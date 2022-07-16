@@ -20,3 +20,11 @@
   height: 5em;
 }
 
+/*h2 {
+  text-align: center;
+}*/
+#toggle {
+  position: relative;
+  left: 5%;
+}
+
