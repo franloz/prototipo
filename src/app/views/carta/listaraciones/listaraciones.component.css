@@ -27,6 +27,8 @@
   text-align: end;
 
   padding-right: 2em;
+  font-family: 'Edu QLD Beginner';
+  font-weight: bold;
 }
 
 
@@ -36,6 +38,10 @@
   text-align: center;
 
 
+}
+mat-panel-title{
+  font-family: 'Edu QLD Beginner';
+  font-weight: bold;
 }
 
 #divimagen{

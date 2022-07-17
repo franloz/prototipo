@@ -78,6 +78,7 @@ mat-toolbar{
 #button-drawer{
   padding-left: 2%;
 
+
 }
 
 #restaurante{
@@ -86,4 +87,5 @@ mat-toolbar{
 
 mat-drawer-container{
   height: 100%;
+
 }

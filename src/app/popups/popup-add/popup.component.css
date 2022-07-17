@@ -28,3 +28,7 @@
   left: 5%;
 }
 
+mat-dialog-actions{
+  overflow-y: visible;
+}
+

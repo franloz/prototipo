@@ -27,8 +27,14 @@
   text-align: end;
 
   padding-right: 2em;
+  font-family: 'Edu QLD Beginner';
+  font-weight: bold;
 }
 
+mat-panel-title{
+  font-family: 'Edu QLD Beginner';
+  font-weight: bold;
+}
 
 #divingredientes{
   width: 50%;

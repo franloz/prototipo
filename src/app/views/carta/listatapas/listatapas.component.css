@@ -10,9 +10,13 @@
   width: 76%;
 
 
+
 }
 
-
+mat-panel-title{
+  font-family: 'Edu QLD Beginner';
+  font-weight: bold;
+}
 
 
 
