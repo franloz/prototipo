@@ -1,0 +1,105 @@
+.buttoninstagram{
+  position: fixed;
+  bottom: 15.5em;
+  right: 2em;
+}
+
+.buttonfacebook{
+  position: fixed;
+  bottom: 11em;
+  right: 2em;
+}
+
+.buttontwitter{
+  position: fixed;
+  bottom: 6.5em;
+  right: 2em;
+}
+.buttonpinterest{
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+}
+
+.fa-brands{
+  color: white;
+
+}
+h1{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 12vw;
+}
+
+h2{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 3vw;
+}
+
+h3{
+  text-align: center;
+
+  color: white;
+  font-size: 1.5vw;
+}
+
+p{
+  margin-left:auto;
+  margin-right:auto;
+  width: 76%;
+  text-align: justify;
+  background-color: hsla(0, 0%, 0%, 0.75);
+  color: white;
+  padding: 3em;
+
+}
+
+
+
+/*#titulo{
+  height: 40%;
+  text-align: center;
+
+}*/
+
+img{
+ /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  z-index: -100;
+  opacity: 0.9;
+  height: 100%;
+  width:100% ;
+}
+
+/*.main {
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.75);
+  color: white;
+  padding: 3em;
+
+
+}*/
+
+.div{
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.75);
+  color: white;
+  padding: 3em;
+  width: 76%;
+}
+
+iframe{
+  width:45vw ;
+  height:35vw ;
+}
