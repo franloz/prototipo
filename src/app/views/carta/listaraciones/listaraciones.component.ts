@@ -1,10 +1,10 @@
 import { DataServicesService } from './../../../shared/services/data-services.service';
 import { Comida } from 'src/app/shared/interfaces/comida.interface';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupDeleteComponent } from 'src/app/popups/popup-delete/popup-delete.component';
 import { PopupUpdateComponent } from 'src/app/popups/popup-update/popup-update.component';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-listaraciones',
@@ -19,7 +19,7 @@ export class ListaracionesComponent implements OnInit {
   //array de tapas para llenarlo con la suscripcion
   tapas: Comida[] = [];
 
-  constructor(private dataservice:DataServicesService,public dialog:MatDialog,private breakpointService: BreakpointObserver) { }
+  constructor(private dataservice:DataServicesService,public dialog:MatDialog,private responsive:ResponsiveService) { }
 
   ngOnInit(): void {
     this.dataservice.getComidas('raciones').subscribe(tapas=>{
@@ -28,17 +28,15 @@ export class ListaracionesComponent implements OnInit {
 
 
 
-    this.breakpointService
-      .observe(Breakpoints.XSmall)
-      .subscribe((result)=>{
-        this.listaMovil=false;
-        //this.listaOrdena=true;
+    this.responsive.cambioTamano().subscribe((result)=>{
+      this.listaMovil=false;
+      //this.listaOrdena=true;
 
-        if(result.matches){
-          this.listaMovil=true;//si llega al ancho pedido se esconde el menu para el movil
-         // this.listaOrdena=false;
-        }
-      })
+      if(result.matches){
+        this.listaMovil=true;//si llega al ancho pedido se esconde el menu para el movil
+       // this.listaOrdena=false;
+      }
+    })
 
 
 

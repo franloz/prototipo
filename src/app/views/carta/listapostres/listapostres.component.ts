@@ -5,6 +5,7 @@ import { PopupDeleteComponent } from 'src/app/popups/popup-delete/popup-delete.c
 import { PopupUpdateComponent } from 'src/app/popups/popup-update/popup-update.component';
 import { Comida } from 'src/app/shared/interfaces/comida.interface';
 import { DataServicesService } from 'src/app/shared/services/data-services.service';
+import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 
 @Component({
   selector: 'app-listapostres',
@@ -18,7 +19,7 @@ export class ListapostresComponent implements OnInit {
   //array de tapas para llenarlo con la suscripcion
   tapas: Comida[] = [];
 
-  constructor(private dataservice:DataServicesService,public dialog:MatDialog,private breakpointService: BreakpointObserver) { }
+  constructor(private dataservice:DataServicesService,public dialog:MatDialog,private responsive:ResponsiveService) { }
 
   ngOnInit(): void {
     this.dataservice.getComidas('postres').subscribe(tapas=>{
@@ -27,17 +28,15 @@ export class ListapostresComponent implements OnInit {
 
 
 
-    this.breakpointService
-      .observe(Breakpoints.XSmall)
-      .subscribe((result)=>{
-        this.listaMovil=false;
-        //this.listaOrdena=true;
+    this.responsive.cambioTamano().subscribe((result)=>{
+      this.listaMovil=false;
+      //this.listaOrdena=true;
 
-        if(result.matches){
-          this.listaMovil=true;//si llega al ancho pedido se esconde el menu para el movil
-         // this.listaOrdena=false;
-        }
-      })
+      if(result.matches){
+        this.listaMovil=true;//si llega al ancho pedido se esconde el menu para el movil
+       // this.listaOrdena=false;
+      }
+    })
 
 
 

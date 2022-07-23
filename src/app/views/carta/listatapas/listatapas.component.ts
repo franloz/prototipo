@@ -1,9 +1,8 @@
+import { ResponsiveService } from './../../../shared/services/responsive.service';
 import { PopupUpdateComponent } from '../../../popups/popup-update/popup-update.component';
 import { PopupDeleteComponent } from '../../../popups/popup-delete/popup-delete.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PopupComponent } from 'src/app/popups/popup-add/popup.component';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Comida } from 'src/app/shared/interfaces/comida.interface';
 import { DataServicesService } from 'src/app/shared/services/data-services.service';
 
@@ -20,7 +19,7 @@ export class ListatapasComponent implements OnInit {
   //array de tapas para llenarlo con la suscripcion
   tapas: Comida[] = [];
 
-  constructor(private dataservice:DataServicesService,public dialog:MatDialog,private breakpointService: BreakpointObserver) { }
+  constructor(private dataservice:DataServicesService,public dialog:MatDialog,private responsive:ResponsiveService) { }
 
   ngOnInit(): void {
     this.dataservice.getComidas('tapas').subscribe(tapas=>{
@@ -29,7 +28,7 @@ export class ListatapasComponent implements OnInit {
 
 
 
-    this.breakpointService
+   /* this.breakpointService
       .observe(Breakpoints.XSmall)
       .subscribe((result)=>{
         this.listaMovil=false;
@@ -39,9 +38,16 @@ export class ListatapasComponent implements OnInit {
           this.listaMovil=true;//si llega al ancho pedido se esconde el menu para el movil
          // this.listaOrdena=false;
         }
+      })*/
+      this.responsive.cambioTamano().subscribe((result)=>{
+        this.listaMovil=false;
+        //this.listaOrdena=true;
+
+        if(result.matches){
+          this.listaMovil=true;//si llega al ancho pedido se esconde el menu para el movil
+         // this.listaOrdena=false;
+        }
       })
-
-
 
 
   }
