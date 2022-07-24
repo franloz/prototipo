@@ -3,7 +3,7 @@
 
 <div class="br"></div>
 
-<img src="assets/botellas.jpg" class="img-fluid" />
+<img [src]="listaMovil ? 'assets/fondo.jpg': 'assets/botellas.jpg'" class="img-fluid" />
 
 <h1 class="h1">Le Somellire</h1>
 <div class="br"></div>
@@ -30,13 +30,7 @@
 
 
 
-<mat-card>
-  <mat-card-title>Nuestra Newsletter</mat-card-title>
-  <mat-card-subtitle>Al registrarse recibirá correos con ofertas irresistibles</mat-card-subtitle>
-  <mat-card-actions>
-    <!--formulario-->
-  </mat-card-actions>
-</mat-card>
+
 
 <br />
 
@@ -56,18 +50,18 @@
 
   <mat-card-actions>
 
-      <button class="button" >
-        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram fa-5x"></i></a>
-      </button>
-      <button class="button" >
-        <a href="https://es-es.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f fa-5x"></i></a>
-      </button>
-      <button class="button" >
-        <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter fa-5x"></i></a>
-      </button>
-      <button class="button" >
-        <a href="https://www.pinterest.es/" target="_blank"><i class="fa-brands fa-pinterest-p fa-5x"></i></a>
-      </button>
+    <button class="button">
+      <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram fa-5x"></i></a>
+    </button>
+    <button class="button">
+      <a href="https://es-es.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f fa-5x"></i></a>
+    </button>
+    <button class="button">
+      <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter fa-5x"></i></a>
+    </button>
+    <button class="button">
+      <a href="https://www.pinterest.es/" target="_blank"><i class="fa-brands fa-pinterest-p fa-5x"></i></a>
+    </button>
 
   </mat-card-actions>
 </mat-card>
@@ -83,6 +77,66 @@
 </mat-card>
 
 <br />
+
+<mat-card id="newsletter">
+  <mat-card-title>Nuestra Newsletter</mat-card-title>
+  <mat-card-subtitle>Al registrarse recibirá correos con ofertas irresistibles</mat-card-subtitle>
+  <mat-card-actions>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form">
+      <div>
+
+
+        <mat-form-field appearance="outline" class="cuadrodatos">
+          <!--continuar aqui-->
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="nombre">
+          <!-- <mat-hint>Introduzca nombre de la tapa</mat-hint>-->
+        </mat-form-field>
+      </div>
+
+      <div>
+
+
+        <mat-form-field  appearance="outline" class="cuadrodatos">
+          <!--continuar aqui-->
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="correo">
+          <!-- <mat-hint>Introduzca nombre de la tapa</mat-hint>-->
+        </mat-form-field>
+      </div>
+
+     <!-- <div>
+
+        <mat-form-field appearance="outline" class="cuadrodatos">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput  formControl="correo" [errorStateMatcher]="matcher"
+            placeholder="Ex. pat@example.com">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="correo.hasError('email') && !correo.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="correo.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>-->
+
+
+
+
+
+
+
+      <br />
+
+      <button mat-button  type="submit" [disabled]="!profileForm.valid">Guardar</button>
+      <br />
+
+
+
+    </form>
+  </mat-card-actions>
+</mat-card>
 <br />
 
 
