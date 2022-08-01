@@ -1,4 +1,9 @@
 
+
+<div>
+<!--<img [src]="listaMovil ? 'assets/photo.jpg': null" class="img-fluid" />-->
+
+
 <h1>Tapas</h1>
 
 <app-listatapas></app-listatapas>
@@ -25,7 +30,7 @@
 
 
 
-<button class="buttonadd" mat-fab color="warn" aria-label="OpenDialog" (click)="openDialog()">
+<button *ngIf="user!=null" class="buttonadd" mat-fab color="warn" aria-label="OpenDialog" (click)="openDialog()">
   <mat-icon>add</mat-icon>
 </button>
 
@@ -33,3 +38,4 @@
 
 <!--hacer un buscador por el nombre de la tapa-->
 
+</div>

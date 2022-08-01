@@ -75,6 +75,12 @@ mat-toolbar{
   font-size: large;
 }
 
+.button-account{
+  font-size: large;
+  text-align: end;
+  padding-right: 0.4em;
+}
+
 #button-drawer{
   padding-left: 2%;
 
@@ -87,11 +93,13 @@ mat-toolbar{
 
 mat-drawer-container{
   height: 100%;
+  background-color: rgb(49, 49, 49);
 
 }
 
 .br{
   height: 5em;
+  background-color: rgb(49, 49, 49);
   /*background-color: rgb(33, 31, 31);*/
 }
 

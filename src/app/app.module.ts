@@ -27,7 +27,7 @@ import { MaterialModule } from './material/material.module';
 import { CartaComponent } from './views/carta/carta.component';
 import { ListaracionesComponent } from './views/carta/listaraciones/listaraciones.component';
 import { ListapostresComponent } from './views/carta/listapostres/listapostres.component';
-import { ReservarComponent } from './views/reservar/reservar.component';
+import { LoginComponent } from './views/login/login.component';
 
 
 
@@ -44,7 +44,7 @@ import { ReservarComponent } from './views/reservar/reservar.component';
     CartaComponent,
     ListaracionesComponent,
     ListapostresComponent,
-    ReservarComponent,
+    LoginComponent,
   ],
   imports: [
     MaterialModule,

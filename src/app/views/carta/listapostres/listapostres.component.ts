@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { getAuth } from '@angular/fire/auth';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupDeleteComponent } from 'src/app/popups/popup-delete/popup-delete.component';
 import { PopupUpdateComponent } from 'src/app/popups/popup-update/popup-update.component';
@@ -15,6 +16,8 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 export class ListapostresComponent implements OnInit {
   listaMovil:boolean=false;
   //listaOrdena:boolean=false;
+
+  public user;
 
   //array de tapas para llenarlo con la suscripcion
   tapas: Comida[] = [];
@@ -37,6 +40,9 @@ export class ListapostresComponent implements OnInit {
        // this.listaOrdena=false;
       }
     })
+
+    const auth = getAuth();
+    this.user = auth.currentUser;
 
 
 

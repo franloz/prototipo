@@ -19,6 +19,9 @@ textarea{
 
 h1{
   text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: white;
+
 }
 
 mat-divider{
@@ -27,4 +30,18 @@ mat-divider{
   width: 76%;
 }
 
+img{
+  /* top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);*/
+
+   position: fixed;
+   right: 0;
+   top: 0;
+
+   z-index: -100;
+   opacity: 0.9;
+   height: 100%;
+   width:100% ;
+ }
 

@@ -5,12 +5,17 @@ import { addDoc, collection } from '@firebase/firestore';
 import { Comida } from '../interfaces/comida.interface';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataServicesService {
 
-  constructor(private firestore:Firestore) { }//aqui se importarian los servicios para authentification y demas funcionalidades de firebase
+
+  constructor(private firestore:Firestore) {
+
+  }//aqui se importarian los servicios para authentification y demas funcionalidades de firebase
+
 
 
   addComida(comida:Comida,tabla:string){

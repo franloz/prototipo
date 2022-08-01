@@ -42,6 +42,10 @@ export class AppComponent implements OnInit{
       //this.mmm();
   }
 
+  abrirWasap():void{
+    window.open("https://api.whatsapp.com/send?phone=34692031177", "_blank");
+  }
+
   /*click():void{
 
     this.myNameElem2.nativeElement.focus();

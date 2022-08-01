@@ -138,6 +138,8 @@ mat-label{
 mat-card-subtitle{
   color: white;
   padding-top: 1.3em;
+  font-family: 'Edu QLD Beginner';
+  font-size: 1.2em;
 }
 
 mat-card-title{
@@ -155,6 +157,8 @@ mat-card-title{
 }
 p{
   text-align: justify;
+  font-family: 'Edu QLD Beginner';
+  font-size: 1.2em;
 }
 
 

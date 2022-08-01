@@ -12,29 +12,29 @@ import { ResponsiveService } from 'src/app/shared/services/responsive.service';
 })
 export class HomeComponent implements OnInit {
 
-  listaMovil:boolean=false;
+  listaMovil: boolean = false;
 
 
 
   profileForm: FormGroup;
 
-  constructor(private router: Router,private responsive:ResponsiveService) {
+  constructor(private router: Router, private responsive: ResponsiveService) {
     //formulario
     this.profileForm = new FormGroup({//formulario reactivo
       nombre: new FormControl('', Validators.required),
-      correo: new FormControl('',[Validators.required, Validators.email]),
+      correo: new FormControl('', [Validators.required, Validators.email]),
     });
-   }
+  }
 
   ngOnInit(): void {
 
-    this.responsive.cambioTamano().subscribe((result)=>{
-      this.listaMovil=false;
+    this.responsive.cambioTamano().subscribe((result) => {
+      this.listaMovil = false;
       //this.listaOrdena=true;
 
-      if(result.matches){
-        this.listaMovil=true;//si llega al ancho pedido se esconde el menu para el movil
-       // this.listaOrdena=false;
+      if (result.matches) {
+        this.listaMovil = true;//si llega al ancho pedido se esconde el menu para el movil
+        // this.listaOrdena=false;
       }
     })
 
@@ -47,8 +47,11 @@ export class HomeComponent implements OnInit {
 
 
   }
-  reservar():void{
-    this.router.navigate(['reservar']);
+  reservar(): void {
+    //this.router.navigate(['reservar']);
+
+    window.open("https://api.whatsapp.com/send?phone=34692031177", "_blank");
+
   }
 
 }

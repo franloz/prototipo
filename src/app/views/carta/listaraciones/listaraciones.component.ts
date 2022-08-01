@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopupDeleteComponent } from 'src/app/popups/popup-delete/popup-delete.component';
 import { PopupUpdateComponent } from 'src/app/popups/popup-update/popup-update.component';
 import { ResponsiveService } from 'src/app/shared/services/responsive.service';
+import { getAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-listaraciones',
@@ -15,6 +16,8 @@ export class ListaracionesComponent implements OnInit {
 
   listaMovil:boolean=false;
   //listaOrdena:boolean=false;
+
+  public user;
 
   //array de tapas para llenarlo con la suscripcion
   tapas: Comida[] = [];
@@ -38,7 +41,8 @@ export class ListaracionesComponent implements OnInit {
       }
     })
 
-
+    const auth = getAuth();
+    this.user = auth.currentUser;
 
 
   }

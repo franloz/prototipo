@@ -46,7 +46,7 @@
 
 
 
-      <mat-action-row>
+      <mat-action-row *ngIf="user!=null">
         <button mat-button (click)="deleteComida(tapa)">Borrar <mat-icon>delete</mat-icon></button>
         <button mat-button (click)="updateComida(tapa)">Modificar <mat-icon>edit</mat-icon></button>
       </mat-action-row>

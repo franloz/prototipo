@@ -1,0 +1,20 @@
+<div id="body">
+  <h1>Login exclusivo para propietarios</h1>
+  <br/>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
+        formControlName="correo">
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="password" class="form-control" aria-describedby="passwordHelpInline" placeholder="Contraseña"
+        formControlName="contrasena">
+    </div>
+
+    <button mat-button type="submit" [disabled]="!profileForm.valid">Guardar</button>
+  </form>
+
+
+</div>

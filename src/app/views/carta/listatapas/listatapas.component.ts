@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Comida } from 'src/app/shared/interfaces/comida.interface';
 import { DataServicesService } from 'src/app/shared/services/data-services.service';
+import { getAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-listatapas',
@@ -15,6 +16,8 @@ export class ListatapasComponent implements OnInit {
 
   listaMovil:boolean=false;
   //listaOrdena:boolean=false;
+
+  public user;
 
   //array de tapas para llenarlo con la suscripcion
   tapas: Comida[] = [];
@@ -48,6 +51,9 @@ export class ListatapasComponent implements OnInit {
          // this.listaOrdena=false;
         }
       })
+
+      const auth = getAuth();
+      this.user = auth.currentUser;
 
 
   }

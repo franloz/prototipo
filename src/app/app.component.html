@@ -9,9 +9,11 @@
     <br />
     <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/carta']">Carta</button>
     <br />
-    <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/reservar']">Reservar</button>
+    <button class="mat-drawer-button" (click)="drawer.close()" mat-button (click)="abrirWasap()">Reservar</button>
     <br />
-    <button class="mat-drawer-button" (click)="drawer.close()" mat-button [routerLink]="['/contacto']">Basic</button>
+    <button class="button-account" (click)="drawer.close()"  mat-icon-button [routerLink]="['/login']" >
+      <mat-icon>account_circle</mat-icon>
+    </button>
 
   </mat-drawer>
 
@@ -31,10 +33,17 @@
       <button class="button-menu"  mat-button [routerLink]="['/carta']" >
         Carta
       </button>
-      <button class="button-menu"  mat-button [routerLink]="['/reservar']" >
+      <button class="button-menu"  mat-button (click)="abrirWasap()" >
         Reservar
       </button>
+
+
+
+
     </div>
+    <button  *ngIf="hideMenuH" class="button-account"  mat-icon-button [routerLink]="['/login']" >
+      <mat-icon>account_circle</mat-icon>
+    </button>
 
   </mat-toolbar>
 
